@@ -4,9 +4,6 @@
   --green : #606c38;
 
 }
-* {
-  border: none;
-}
 
 .beige {
   background-color: var(--beige);
@@ -16,7 +13,6 @@
   padding: 70px 0;
   text-align: center;
 }
-
 
 body {
         font-family: Arial, sans-serif;
