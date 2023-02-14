@@ -67,14 +67,24 @@ main {
   padding: 20px;
   background-color: var(--beige);
 }
+/* displayed pet start */
+.flexcontainer{
+    display: flex;
+}
+main figure{
+    margin-bottom: 15%;
+}
 main figure figcaption{
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column; /*puts paraghraphs one on top of the other*/
+    margin: auto; /* this centers info next to image */
+
+
 }
 main figure figcaption p{
     display: flex;
-    justify-content: center;
 }
-/* disp[layed pet end */
+/* displayed pet end */
 
 footer {
   background-color: var(--green);
