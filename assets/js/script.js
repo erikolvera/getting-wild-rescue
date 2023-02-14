@@ -23,7 +23,6 @@ function getToken() {
     .then(response=>response.json())
     .then(data=>{
         localStorage.setItem("token", data.access_token);
-        console.log(data);
     })
 }
 
@@ -39,12 +38,20 @@ function findPetsNearby(location) {
         if(response.status == 401) {
             getToken();
         }
-        console.log(response)
         return response.json();
-        
     })
     .then(data=> {
-        console.log(data);
+        for(var i = 0; i < data.animals.length; i++) {
+            if(isDogPage) {
+                if(data.animals[i].type == "Dog") {
+                    console.log(data.animals[i]);
+                }
+            } else if(isCatPage) {
+                if(data.animals[i].type == "Cat") {
+                    console.log(data.animals[i]);
+                }
+            }
+        }
     })
 }
 findPetsNearby("60634");
