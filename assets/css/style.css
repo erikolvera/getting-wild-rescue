@@ -67,10 +67,6 @@ main {
   padding: 20px;
   background-color: var(--beige);
 }
-/* displayed pet start */
-main figure{
-    margin: 10%;
-}
 main figure img{
 display: flex;
 margin:auto; /*centers image*/
@@ -85,11 +81,6 @@ main figure figcaption p{
 /* disp[layed pet end */
 
 footer {
-    background-color: lightgray;
-    padding: 20px;
-    margin-top: 10%;
-    text-align: center;
-    color: gray;
   background-color: var(--green);
   padding: 20px;
   text-align: center;
