@@ -67,10 +67,6 @@ main {
   padding: 20px;
   background-color: var(--beige);
 }
-main figure img{
-display: flex;
-margin:auto; /*centers image*/
-}
 main figure figcaption{
     margin-top: 10px;
 }
