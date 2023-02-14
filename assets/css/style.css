@@ -44,10 +44,27 @@ h2 {
 main {
     padding: 20px;
 }
+/* displayed pet start */
+main figure{
+    margin: 10%;
+}
+main figure img{
+display: flex;
+margin:auto; /*centers image*/
+}
+main figure figcaption{
+    margin-top: 10px;
+}
+main figure figcaption p{
+    display: flex;
+    justify-content: center;
+}
+/* disp[layed pet end */
 
 footer {
     background-color: lightgray;
     padding: 20px;
+    margin-top: 10%;
     text-align: center;
     color: gray;
 }

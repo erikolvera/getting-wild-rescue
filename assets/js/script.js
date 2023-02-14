@@ -53,3 +53,13 @@ console.log(token);
 $("#submit").click(function() {
     
 })
+
+var getBreedUrl = 'https://api.petfinder.com/v2/types/{dog}/breeds';
+fetch(getBreedUrl , {
+    method:'GET',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        "Authorization" : `Bearer ${localStorage.getItem("token")}`
+    }
+});
+
