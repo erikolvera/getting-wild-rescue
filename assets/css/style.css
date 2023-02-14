@@ -67,6 +67,14 @@ main {
   padding: 20px;
   background-color: var(--beige);
 }
+main figure figcaption{
+    margin-top: 10px;
+}
+main figure figcaption p{
+    display: flex;
+    justify-content: center;
+}
+/* disp[layed pet end */
 
 footer {
   background-color: var(--green);

@@ -70,4 +70,3 @@ $("#submit").click(function() {
     console.log(userInputEL.value)
     findPetsNearby(userInputEL.value);
     return false;
-})
