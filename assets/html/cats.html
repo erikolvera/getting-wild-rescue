@@ -22,24 +22,27 @@
               <li><a class="text-xl" href="cats.html">Cats</a></li>
           </ul>
           <div class="bg-white rounded-lg p-4">
-              <form id="submit">
-                  <input type="text" class="rounded-lg text-gray-700 focus:outline-none focus:shadow-outline" placeholder="Search for a pet..."/>
-                  <button type="submit" class="bg-gray-400 text-white p-1 rounded-lg hover:bg-gray-500 hover:text-white ml-4">Search</button>
+              <form>
+                  <input id="userInput" type="text" class="rounded-lg text-gray-700 focus:outline-none focus:shadow-outline" placeholder="Enter zip code here..."/>
+                  <button id="submit" type="submit" class="bg-gray-400 text-white p-1 rounded-lg hover:bg-gray-500 hover:text-white ml-4">Search</button>
               </form>
           </div>
       </nav>
   </header>
-  <main>
-    <div class="grid grid-cols-1 md:grid-cols-2 beige">
-      <img class="" src="/images/dog-and-cat-whitebg.jpg"></a>
-      <h2 class="center text-center text-5xl font-bold">Facts about this pet!</h2>
-  </div>
-  </main>
+    <main>
+        <div id="petContainer"></div>  
+    </main>
     <footer>
       <p>Copyright &copy; </p>
     </footer>
-  <!-- link to JQUERY -->
+
+    <script>
+      const isCatPage = true;
+      const isDogPage = false;
+    </script>
+
+    <!-- link to JQUERY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/assets/js/script.js"></script>
+    <script src="../js/script.js"></script>
   </body>
 </html>
