@@ -1,6 +1,7 @@
 //GLOBAL ELEMENT VARIABLES
 var userInputEL = document.getElementById("userInput");
 var submitBtnEL = document.getElementById("submit");
+var petContEL = document.getElementById("petContainer");
 
 //API keys
 const petAPIkey = 'XGikDxKLCfIT8eGinrzrmJ5aSNQc2Wd0UkWHPMN0GRDzH5J4pA';
@@ -47,22 +48,59 @@ function findPetsNearby(location) {
         return response.json();
     })
     .then(data=> {
+        clearcontent("petContainer");
         //sort through all the data
         for(var i = 0; i < data.animals.length; i++) {
             //determine what page the user is currently on
             if(isDogPage) {
                 //obtain only data for dogs
                 if(data.animals[i].type == "Dog") {
-                    console.log(data.animals[i]);
+                    console.log(data.animals[i])
+                    generatePetResults(data.animals[i]);
                 }
             } else if(isCatPage) {
                 //obtain only data for cats
                 if(data.animals[i].type == "Cat") {
                     console.log(data.animals[i]);
+                    generatePetResults(data.animals[i]);
                 }
             }
         }
     })
+}
+
+function generatePetResults(info) {
+    //create container for each individual pet
+    var cardDiv = document.createElement("div");
+
+    //create header for pet name
+    var cardHeader = document.createElement("h4");
+    cardHeader.innerText = info.name;
+
+    //create img element for the pet image
+    var cardPhoto = document.createElement("img");
+    var imageURL = info.primary_photo_cropped.small;
+    cardPhoto.setAttribute("src", imageURL);
+
+    //create paragraph with pet's age, breed, and its contact info
+    var cardPara = document.createElement("pre");
+    const node = document.createTextNode("Age: " + info.age 
+    + "\nPrimary Breed: " + info.breeds.primary 
+    + "\nContact us for more about this pet"
+    + "\nEmail: " + info.contact.email 
+    + "\nPhone: " + info.contact.phone);
+    cardPara.append(node);
+
+    cardDiv.appendChild(cardHeader);
+    cardDiv.appendChild(cardPhoto);
+    cardDiv.appendChild(cardPara);
+
+    petContEL.append(cardDiv);
+}
+
+//clear container for next search
+function clearcontent(elementID) {
+    document.getElementById(elementID).innerHTML = "";
 }
 
 //when submit is clicked, find pets nearby
