@@ -48,13 +48,14 @@ function findPetsNearby(location) {
         return response.json();
     })
     .then(data=> {
+        clearcontent("petContainer");
         //sort through all the data
         for(var i = 0; i < data.animals.length; i++) {
             //determine what page the user is currently on
             if(isDogPage) {
                 //obtain only data for dogs
                 if(data.animals[i].type == "Dog") {
-                    console.log(data.animals[i]);
+                    console.log(data.animals[i])
                     generatePetResults(data.animals[i]);
                 }
             } else if(isCatPage) {
@@ -95,6 +96,11 @@ function generatePetResults(info) {
     cardDiv.appendChild(cardPara);
 
     petContEL.append(cardDiv);
+}
+
+//clear container for next search
+function clearcontent(elementID) {
+    document.getElementById(elementID).innerHTML = "";
 }
 
 //when submit is clicked, find pets nearby
